@@ -9,6 +9,7 @@
     transform: translateX(-50%);
 
     z-index: 1000;
+    max-width: 100%;
     width: 1400px;
     height: 88px;
     padding: 0 24px;

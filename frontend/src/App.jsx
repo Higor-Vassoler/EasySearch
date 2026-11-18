@@ -34,10 +34,14 @@ export default function App() {
     });
   }
 
-  function removeRecentSearch(id) {
+  function removeRecentSearches(id) {
     setRecentSearches((p) => {
       return p.filter((search) => search.id !== id)
     });
+  }
+
+  function clearRecentSearches() {
+    setRecentSearches([]);
   }
 
   function handleSearch() {
@@ -58,7 +62,8 @@ export default function App() {
       <Home
         recentSearches={recentSearches}
         onSelectPlayer={setSearchValue}
-        onRemovePlayer={removeRecentSearch}
+        onRemovePlayer={removeRecentSearches}
+        onClearAll={clearRecentSearches}
       />
     </>
   );

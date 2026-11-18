@@ -1,13 +1,22 @@
 import "./RecentSearches.css";
 import { X, Clock } from "lucide-react";
 
-export default function RecentSearches({ recentSearches, onSelectPlayer, onRemovePlayer }) {
+export default function RecentSearches({ recentSearches, onSelectPlayer, onRemovePlayer, onClearAll }) {
   return (
     <>
       <section className="recent-searches">
         <div className="recent-title">
           <Clock size={35} className="recent-title-icon" />
           <h2>Recent Searches</h2>
+
+          <button
+            className="clear-all-button"
+            type="button"
+            aria-label="Remove all recent searches"
+            onClick={onClearAll}
+          >
+            Clear All
+          </button>
         </div>
 
         {recentSearches.length > 0 ? (
@@ -17,6 +26,7 @@ export default function RecentSearches({ recentSearches, onSelectPlayer, onRemov
                 <span>{player.username}</span>
 
                 <button
+                  className="x-button"
                   type="button"
                   aria-label={`Remove ${player.username} from recent searches`}
                   onClick={(e) => {
@@ -34,7 +44,7 @@ export default function RecentSearches({ recentSearches, onSelectPlayer, onRemov
             No recent searches yet.
           </p>
         )}
-      </section>
+      </section >
     </>
   );
 }

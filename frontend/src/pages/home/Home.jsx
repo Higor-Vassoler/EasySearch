@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./Home.css";
 import RecentSearches from "../../components/recentSearches/RecentSearches";
 
-export default function Home({ recentSearches, onSelectPlayer, onRemovePlayer }) {
+export default function Home({ recentSearches, onSelectPlayer, onRemovePlayer, onClearAll }) {
 
   return (
     <main className="home">
@@ -15,6 +15,7 @@ export default function Home({ recentSearches, onSelectPlayer, onRemovePlayer })
         recentSearches={recentSearches}
         onSelectPlayer={onSelectPlayer}
         onRemovePlayer={onRemovePlayer}
+        onClearAll={onClearAll}
       />
     </main>
   );
