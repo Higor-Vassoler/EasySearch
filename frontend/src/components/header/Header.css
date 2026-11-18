@@ -2,13 +2,16 @@
     display: grid;
     grid-template-columns: 1fr minmax(280px, 640px) 1fr;
     align-items: center;
+
     position: fixed;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
 
     z-index: 1000;
-    width: calc(100% - 40px);
+    width: 1400px;
     height: 88px;
     padding: 0 24px;
-    margin: 15px 20px;
 
     background: var(--color-background);
     border: 1px solid var(--color-border);
