@@ -19,7 +19,10 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev:front": "npm --prefix frontend run dev",
+    "dev:back": "npm --prefix backend run dev",
+    "dev": "concurrently -n BACK,FRONT -c blue,green \"npm:dev:back\" \"npm:dev:front\""
   },
   "devDependencies": {
     "concurrently": "^10.0.7"
