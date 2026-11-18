@@ -1,13 +1,21 @@
-import { useState } from "react"
-import "./Home.css"
+import { useState } from "react";
+import "./Home.css";
+import RecentSearches from "../../components/recentSearches/RecentSearches";
 
-function Home() {
+export default function Home({ recentSearches, onSelectPlayer, onRemovePlayer }) {
 
   return (
-    <>
-      <h1>Olá do FrontEnd.</h1>
-    </>
-  )
-}
+    <main className="home">
+      <section className="home-hero">
+        <h1>EasySearch</h1>
+        <p>Your team on the radar.</p>
+      </section>
 
-export default Home
+      <RecentSearches
+        recentSearches={recentSearches}
+        onSelectPlayer={onSelectPlayer}
+        onRemovePlayer={onRemovePlayer}
+      />
+    </main>
+  );
+}
