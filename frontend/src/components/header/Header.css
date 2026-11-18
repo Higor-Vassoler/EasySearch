@@ -1,6 +1,6 @@
 .header {
     display: grid;
-    grid-template-columns: 1fr minmax(280px, 640px) 1fr;
+    grid-template-columns: 1fr minmax(280px, 440px) 1fr;
     align-items: center;
 
     position: fixed;
