@@ -22,7 +22,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev:front": "npm --prefix frontend run dev",
     "dev:back": "npm --prefix backend run dev",
-    "dev": "concurrently -n BACK,FRONT -c blue,green \"npm:dev:back\" \"npm:dev:front\""
+    "dev": "concurrently -n BACK,FRONT -c blue,green \"npm:dev:back\" \"npm:dev:front\"",
+    "install:all": "npm install && npm install --prefix backend && npm install --prefix frontend"
   },
   "devDependencies": {
     "concurrently": "^10.0.7"
