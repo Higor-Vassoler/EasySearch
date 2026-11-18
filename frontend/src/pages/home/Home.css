@@ -24,6 +24,10 @@
   letter-spacing: -2px;
 }
 
+.home-hero span {
+  color: var(--color-primary);
+}
+
 .home-hero p {
   margin: 0;
 

@@ -7,7 +7,7 @@ export default function Home({ recentSearches, onSelectPlayer, onRemovePlayer })
   return (
     <main className="home">
       <section className="home-hero">
-        <h1>EasySearch</h1>
+        <h1>Easy<span>Search</span></h1>
         <p>Your team on the radar.</p>
       </section>
 
