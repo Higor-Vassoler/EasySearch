@@ -1,0 +1,27 @@
+{
+  "name": "easysearch",
+  "version": "1.0.0",
+  "description": "root dir",
+  "keywords": [
+    "op.gg",
+    "League Of Legends"
+  ],
+  "homepage": "https://github.com/Higor-Vassoler/EasySearch#readme",
+  "bugs": {
+    "url": "https://github.com/Higor-Vassoler/EasySearch/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Higor-Vassoler/EasySearch.git"
+  },
+  "license": "ISC",
+  "author": "Higor Vassoler",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.7"
+  }
+}
