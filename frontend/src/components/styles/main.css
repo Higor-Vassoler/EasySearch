@@ -1,0 +1,38 @@
+:root {
+  /* Backgrounds */
+  --color-background: #050507;
+  --color-surface: #121217;
+  --color-surface-elevated: #1C1C24;
+  --color-surface-hover: #24242D;
+
+  /* Borders and separators */
+  --color-border: #2A2A33;
+  --color-border-subtle: rgba(255, 255, 255, 0.08);
+
+  /* Brand / accent */
+  --color-primary: #FF4B8F;
+  --color-primary-hover: #D6337F;
+  --color-primary-bright: #FF77B6;
+  --color-primary-muted: rgba(255, 75, 143, 0.12);
+  --color-primary-border: rgba(255, 75, 143, 0.35);
+
+  /* Text */
+  --color-text-primary: #F5F5F7;
+  --color-text-secondary: #A1A1AA;
+  --color-text-muted: #71717A;
+  --color-text-on-primary: #050507;
+
+  /* Feedback states */
+  --color-success: #4ADE80;
+  --color-warning: #FACC15;
+  --color-danger: #F87171;
+  --color-info: #60A5FA;
+
+  /* Overlays */
+  --color-overlay: rgba(0, 0, 0, 0.65);
+  --color-focus-ring: rgba(255, 75, 143, 0.18);
+}
+
+* {
+  font-family: 'Times New Roman', Times, serif;
+}
