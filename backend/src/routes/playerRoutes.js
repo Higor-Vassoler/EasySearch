@@ -5,6 +5,6 @@ import { getPlayer, getPlayerLiveMatch } from "../controllers/riotAccountControl
 const router = express.Router();
 
 router.get("/:username", getPlayer);
-router.get("/live-match/:username", getPlayerLiveMatch)
+router.get("/live-match/:username", getPlayerLiveMatch);
 
 export default router;
