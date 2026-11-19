@@ -10,7 +10,7 @@ export default function SearchBar({ searchValue, onSearchChange, onSearch }) {
       <Search size={30} />
       <input
         type="text"
-        placeholder="Insira o nome do jogador..."
+        placeholder="Insira o nome do jogador... Ex: Faker#KR1"
         value={searchValue}
         onChange={(e) => onSearchChange(e.target.value)}
         onKeyDown={(e) => {

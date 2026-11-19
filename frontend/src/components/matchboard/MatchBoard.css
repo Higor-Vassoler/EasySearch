@@ -1,0 +1,88 @@
+.main-matchboard {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-rows: repeat(2, minmax(125px, 1fr));
+
+    width: 100%;
+    max-width: 1500px;
+    min-height: 350px;
+
+    padding: 15px;
+    gap: 12px;
+
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 20px;
+
+    box-sizing: border-box;
+}
+
+.blue-team,
+.red-team {
+    display: contents;
+}
+
+.player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 0;
+    min-height: 125px;
+
+    padding: 10px;
+    gap: 8px;
+
+    background-color: var(--color-surface-elevated);
+    border: 1px solid var(--color-border);
+    border-radius: 15px;
+
+    color: var(--color-text-primary);
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.player:hover {
+    background-color: var(--color-surface-hover);
+    transform: translateY(-2px);
+}
+
+.blue {
+    border-top: 3px solid #60A5FA;
+}
+
+.red {
+    border-top: 3px solid #F87171;
+}
+
+.champion {
+    margin: 5px;
+
+    color: var(--color-text-primary);
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.opgg-link {
+    margin: 5px;
+
+    color: var(--color-primary);
+    font-size: 20px;
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+}
+
+.opgg-link:hover {
+    color: var(--color-primary-bright);
+}
+
+.match-loading {
+    color: var(--color-text-secondary);
+    font-size: 16px;
+    text-align: center;
+}

@@ -1,8 +1,8 @@
-import { useState } from "react";
 import "./Home.css";
 import RecentSearches from "../../components/recentSearches/RecentSearches";
+import MatchBoard from "../../components/matchboard/MatchBoard";
 
-export default function Home({ recentSearches, onSelectPlayer, onRemovePlayer, onClearAll }) {
+export default function Home({ recentSearches, onSelectPlayer, onRemovePlayer, onClearAll, playerLiveMatch, submittedUsername }) {
 
   return (
     <main className="home">
@@ -16,6 +16,11 @@ export default function Home({ recentSearches, onSelectPlayer, onRemovePlayer, o
         onSelectPlayer={onSelectPlayer}
         onRemovePlayer={onRemovePlayer}
         onClearAll={onClearAll}
+      />
+
+      <MatchBoard
+        playerLiveMatch={playerLiveMatch}
+        submittedUsername={submittedUsername}
       />
     </main>
   );

@@ -4,6 +4,7 @@ import Home from "./pages/home/Home.jsx";
 
 export default function App() {
   const [searchValue, setSearchValue] = useState("");
+  const [submittedUsername, setSubmittedUsername] = useState("");
   const [recentSearches, setRecentSearches] = useState(() => {
     const savedSearches = localStorage.getItem("recentSearches");
 
@@ -49,7 +50,20 @@ export default function App() {
 
     if (!username) return;
 
+    setSubmittedUsername(username);
     addRecentSearches(username);
+  }
+
+  async function getPlayerLiveMatch(username) {
+    const usernameF = encodeURIComponent(username);
+    const res = await fetch(`http://localhost:5000/api/player/live-match/${usernameF}`);
+    const data = await res.json();
+
+    if (!res.ok) {
+      throw new Errr(data.message || "Erro ao buscar partida.");
+    }
+
+    return data;
   }
 
   return (
@@ -64,6 +78,8 @@ export default function App() {
         onSelectPlayer={setSearchValue}
         onRemovePlayer={removeRecentSearches}
         onClearAll={clearRecentSearches}
+        playerLiveMatch={getPlayerLiveMatch}
+        submittedUsername={submittedUsername}
       />
     </>
   );
