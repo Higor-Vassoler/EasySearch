@@ -1,4 +1,9 @@
 .cn-toast {
+    width: 380px !important;
+    min-height: 75px !important;
+
+    padding: 16px 20px !important;
+
     background: var(--color-surface) !important;
     color: var(--color-text-primary) !important;
     border: 1px solid var(--color-border) !important;
@@ -9,11 +14,14 @@
 
 /* Título */
 .cn-toast [data-title] {
+    font-size: 16px !important;
+    font-weight: 600 !important;
     color: var(--color-text-primary) !important;
 }
 
 /* Descrição */
 .cn-toast [data-description] {
+    font-size: 14px !important;
     color: var(--color-text-secondary) !important;
 }
 
@@ -39,6 +47,8 @@
 
 /* Ícones */
 .cn-toast svg {
+    width: 20px !important;
+    height: 20px !important;
     flex-shrink: 0;
 }
 

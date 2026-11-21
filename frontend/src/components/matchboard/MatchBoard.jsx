@@ -1,8 +1,9 @@
 import { useState, useEffect, act } from "react";
 import "./MatchBoard.css";
+import { toast } from "sonner";
 
 
-export default function MatchBoard({ playerLiveMatch, submittedUsername }) {
+export default function MatchBoard({ playerLiveMatch, submittedUsername, searchTrigger }) {
   const [matchData, setMatchData] = useState(null);
   const [loading, setLoading] = useState(false);
 
@@ -28,7 +29,7 @@ export default function MatchBoard({ playerLiveMatch, submittedUsername }) {
       } catch (error) {
         if (active) {
           setMatchData(null);
-          console.error(error.message);
+          toast.error(error.message);
         }
       } finally {
         if (active) {
@@ -38,18 +39,40 @@ export default function MatchBoard({ playerLiveMatch, submittedUsername }) {
     }
 
     fetchMatch();
-  }, [submittedUsername]);
+
+    return () => {
+      active = false;
+    };
+  }, [submittedUsername, searchTrigger]);
 
   const participants = matchData?.participants ?? [];
 
-  const blueTeam = participants.filter(player => player.teamId === 100);
-  const redTeam = participants.filter(player => player.teamId === 200);
+  // const blueTeam = participants.filter(player => players.teamId === 100);
+  // const redTeam = participants.filter(player => players.teamId === 200);
+
+  const blueTeam = [];
+  const redTeam = [];
+
+  for (const player in participants) {
+    if (player.teamId === 100) {
+      blueTeam = { ...player };
+    } else {
+      redTeam = { ...player };
+    }
+  }
+
+  const playersBlue = [];
+  const playersRed = [];
+
+  // for (const player in blueTeam) {
+  // ??????????????
+  //   }
 
   return (
     <>
       {/* <div className="player blue">
           <p className="champion" >Mordekaiser</p>
-          <a href="https://linkqualquer.com.br" className="opgg-link" target="_blank">OPGG LINK</a>
+          <a href="https://op.gg/pt/lol/summoners/br/MOCHIzera-br1" className="opgg-link" target="_blank">OPGG LINK</a>
         </div> */}
 
       {loading && (
@@ -72,6 +95,7 @@ export default function MatchBoard({ playerLiveMatch, submittedUsername }) {
             {redTeam.map(player => (
               <div className="player red" key={player.puuid}>
                 {player.championName}
+                <a href="https://op.gg/pt/lol/summoners/br/MOCHIzera-br1" className="opgg-link" target="_blank">OPGG LINK</a>
               </div>
             ))}
           </div>

@@ -2,7 +2,7 @@ import "./Home.css";
 import RecentSearches from "../../components/recentSearches/RecentSearches";
 import MatchBoard from "../../components/matchboard/MatchBoard";
 
-export default function Home({ recentSearches, onSelectPlayer, onRemovePlayer, onClearAll, playerLiveMatch, submittedUsername }) {
+export default function Home({ recentSearches, onSelectPlayer, onRemovePlayer, onClearAll, playerLiveMatch, submittedUsername, searchTrigger }) {
 
   return (
     <main className="home">
@@ -21,6 +21,7 @@ export default function Home({ recentSearches, onSelectPlayer, onRemovePlayer, o
       <MatchBoard
         playerLiveMatch={playerLiveMatch}
         submittedUsername={submittedUsername}
+        searchTrigger={searchTrigger}
       />
     </main>
   );

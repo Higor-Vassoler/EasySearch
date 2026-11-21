@@ -6,6 +6,7 @@ import { Toaster } from "./components/ui/Toasts/Toasts.jsx";
 export default function App() {
   const [searchValue, setSearchValue] = useState("");
   const [submittedUsername, setSubmittedUsername] = useState("");
+  const [searchTrigger, setSearchTrigger] = useState(false);
   const [recentSearches, setRecentSearches] = useState(() => {
     const savedSearches = localStorage.getItem("recentSearches");
 
@@ -52,6 +53,7 @@ export default function App() {
     if (!username) return;
 
     setSubmittedUsername(username);
+    setSearchTrigger(prev => !prev);
     addRecentSearches(username);
   }
 
@@ -81,6 +83,7 @@ export default function App() {
         onClearAll={clearRecentSearches}
         playerLiveMatch={getPlayerLiveMatch}
         submittedUsername={submittedUsername}
+        searchTrigger={searchTrigger}
       />
       <Toaster />
     </>
