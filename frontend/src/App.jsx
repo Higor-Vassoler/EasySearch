@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Header from "./components/header/Header.jsx";
 import Home from "./pages/home/Home.jsx";
+import { Toaster } from "./components/ui/Toasts/Toasts.jsx";
 
 export default function App() {
   const [searchValue, setSearchValue] = useState("");
@@ -60,7 +61,7 @@ export default function App() {
     const data = await res.json();
 
     if (!res.ok) {
-      throw new Errr(data.message || "Erro ao buscar partida.");
+      throw new Error(data.message || "Erro ao buscar partida.");
     }
 
     return data;
@@ -81,6 +82,7 @@ export default function App() {
         playerLiveMatch={getPlayerLiveMatch}
         submittedUsername={submittedUsername}
       />
+      <Toaster />
     </>
   );
 }

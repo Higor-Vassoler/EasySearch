@@ -1,0 +1,53 @@
+.cn-toast {
+    background: var(--color-surface) !important;
+    color: var(--color-text-primary) !important;
+    border: 1px solid var(--color-border) !important;
+    border-radius: 12px !important;
+
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35) !important;
+}
+
+/* Título */
+.cn-toast [data-title] {
+    color: var(--color-text-primary) !important;
+}
+
+/* Descrição */
+.cn-toast [data-description] {
+    color: var(--color-text-secondary) !important;
+}
+
+/* Ícone de sucesso */
+.cn-toast[data-type="success"] {
+    border-left: 3px solid var(--color-primary) !important;
+}
+
+/* Ícone de erro */
+.cn-toast[data-type="error"] {
+    border-left: 3px solid var(--color-primary-hover) !important;
+}
+
+/* Ícone de aviso */
+.cn-toast[data-type="warning"] {
+    border-left: 3px solid var(--color-primary-bright) !important;
+}
+
+/* Ícone de informação */
+.cn-toast[data-type="info"] {
+    border-left: 3px solid var(--color-primary) !important;
+}
+
+/* Ícones */
+.cn-toast svg {
+    flex-shrink: 0;
+}
+
+/* Botão de fechar */
+.cn-toast [data-close-button] {
+    color: var(--color-text-secondary) !important;
+}
+
+/* Hover */
+.cn-toast:hover {
+    border-color: var(--color-primary) !important;
+}
